@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DisasterAlleviationFoundation.Models.TaskRegistration>
+@{
+    ViewData["Title"] = "Task Registrations";
+    Layout = "_Layout";
+}
+
+<h2 class="text-3xl font-bold mb-6">Task Registrations</h2>
+
+<ul class="space-y-3">
+    @foreach (var t in Model)
+    {
+        <li class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+            <strong>@t.VolunteerName</strong> signed up for <em>@t.IncidentTitle</em>
+        </li>
+    }
+</ul>

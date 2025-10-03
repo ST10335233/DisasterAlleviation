@@ -1,0 +1,9 @@
+﻿<div class="max-w-md mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-6 text-center">Make a Donation</h2>
+    <form asp-action="Donate" method="post" class="space-y-4">
+        <input type="text" name="donorName" placeholder="Your Name" class="w-full p-3 border rounded-md" required />
+        <input type="text" name="resourceType" placeholder="Resource Type (Food, Clothes, etc.)" class="w-full p-3 border rounded-md" required />
+        <input type="number" name="quantity" placeholder="Quantity" class="w-full p-3 border rounded-md" min="1" required />
+        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700">Submit Donation</button>
+    </form>
+</div>

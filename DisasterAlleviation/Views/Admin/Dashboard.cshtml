@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2 class="text-3xl font-bold mb-6">Admin Dashboard</h2>
+
+<h3 class="text-xl font-semibold mt-4">Volunteers</h3>
+<table class="table-auto border-collapse border border-gray-300 w-full mt-2 mb-6">
+    <thead>
+        <tr>
+            <th class="border px-4 py-2">ID</th>
+            <th class="border px-4 py-2">Name</th>
+            <th class="border px-4 py-2">Registered</th>
+            <th class="border px-4 py-2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.Volunteers != null)
+        {
+            foreach (var v in ViewBag.Volunteers)
+            {
+                <tr>
+                    <td class="border px-4 py-2">@v.Id</td>
+                    <td class="border px-4 py-2">@v.Name</td>
+                    <td class="border px-4 py-2">@v.IsRegistered</td>
+                    <td class="border px-4 py-2">
+                        <a href="/Admin/RemoveVolunteer/@v.Id" class="text-red-600 hover:underline">Remove</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<h3 class="text-xl font-semibold mt-4">Tasks Registered</h3>
+<table class="table-auto border-collapse border border-gray-300 w-full mt-2 mb-6">
+    <thead>
+        <tr>
+            <th class="border px-4 py-2">ID</th>
+            <th class="border px-4 py-2">Volunteer</th>
+            <th class="border px-4 py-2">Task</th>
+            <th class="border px-4 py-2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.TaskRegistrations != null)
+        {
+            foreach (var t in ViewBag.TaskRegistrations)
+            {
+                <tr>
+                    <td class="border px-4 py-2">@t.Id</td>
+                    <td class="border px-4 py-2">@t.VolunteerName</td>
+                    <td class="border px-4 py-2">@t.IncidentTitle</td>
+                    <td class="border px-4 py-2">
+                        <a href="/Admin/RemoveTask/@t.Id" class="text-red-600 hover:underline">Remove</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<h3 class="text-xl font-semibold mt-4">Reported Incidents</h3>
+<table class="table-auto border-collapse border border-gray-300 w-full mt-2 mb-6">
+    <thead>
+        <tr>
+            <th class="border px-4 py-2">ID</th>
+            <th class="border px-4 py-2">Title</th>
+            <th class="border px-4 py-2">Description</th>
+            <th class="border px-4 py-2">Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.Incidents != null)
+        {
+            foreach (var i in ViewBag.Incidents)
+            {
+                <tr>
+                    <td class="border px-4 py-2">@i.Id</td>
+                    <td class="border px-4 py-2">@i.Title</td>
+                    <td class="border px-4 py-2">@i.Description</td>
+                    <td class="border px-4 py-2">@i.Location</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<a href="/Admin/Logout" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Logout</a>

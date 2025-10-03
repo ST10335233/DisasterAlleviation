@@ -1,0 +1,50 @@
+﻿@model DisasterAlleviationFoundation.Models.Volunteer
+
+@{
+    ViewData["Title"] = "Volunteer Profile";
+}
+
+<div class="max-w-2xl mx-auto bg-white shadow-xl rounded-2xl p-10 mt-12 border border-gray-200">
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-extrabold text-blue-700">Welcome, @Model.Name!</h2>
+        <p class="text-gray-500">Manage your volunteer details and participate in disaster response tasks.</p>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="space-y-6">
+        <div class="flex justify-between items-center border-b pb-3">
+            <span class="font-semibold text-gray-700">Email / Name:</span>
+            <span class="text-gray-900">@Model.Name</span>
+        </div>
+        <div class="flex justify-between items-center border-b pb-3">
+            <span class="font-semibold text-gray-700">Registered:</span>
+            <span class="px-3 py-1 rounded-full text-sm font-medium
+                         @(Model.IsRegistered ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700")">
+                @(Model.IsRegistered ? "Yes" : "No")
+            </span>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="/Volunteer/Edit"
+           class="w-full text-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">
+            Edit Profile
+        </a>
+
+        <a href="/Incident/RegisterTask"
+           class="w-full text-center bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition shadow-md">
+            Register for Task
+        </a>
+
+        <a href="/Incident/Report"
+           class="w-full text-center bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition shadow-md">
+            Report Incident
+        </a>
+
+        <a href="/Volunteer/Logout"
+           class="w-full text-center bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition shadow-md">
+            Logout
+        </a>
+    </div>
+</div>

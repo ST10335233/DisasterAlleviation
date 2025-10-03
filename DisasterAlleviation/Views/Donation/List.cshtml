@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DisasterAlleviationFoundation.Models.Donation>
+@{
+    ViewData["Title"] = "Donations";
+    Layout = "_Layout";
+}
+
+<h2 class="text-3xl font-bold mb-6">Donations</h2>
+
+<table class="min-w-full border rounded shadow">
+    <thead class="bg-blue-700 text-white">
+        <tr>
+            <th class="px-4 py-2">Donor</th>
+            <th class="px-4 py-2">Item</th>
+            <th class="px-4 py-2">Quantity</th>
+            <th class="px-4 py-2">Status</th>
+        </tr>
+    </thead>
+    <tbody class="bg-white">
+        @foreach (var d in Model)
+        {
+            <tr class="border-t">
+                <td class="px-4 py-2">@d.DonorName</td>
+                <td class="px-4 py-2">@d.Item</td>
+                <td class="px-4 py-2">@d.Quantity</td>
+                <td class="px-4 py-2">@d.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

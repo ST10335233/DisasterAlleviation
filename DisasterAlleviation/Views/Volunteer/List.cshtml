@@ -1,0 +1,9 @@
+﻿@model IEnumerable<DisasterAlleviationFoundation.Models.Volunteer>
+
+<h2>Volunteers</h2>
+<ul>
+    @foreach (var v in Model)
+    {
+        <li>@v.Name - @(v.IsRegistered ? "Registered" : "Not Registered")</li>
+    }
+</ul>

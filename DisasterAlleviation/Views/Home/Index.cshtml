@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "_Layout";
+}
+
+<div class="text-center py-16">
+    <h1 class="text-5xl font-extrabold text-blue-700 mb-4">Disaster Response Made Simple</h1>
+    <p class="text-xl text-gray-700 mb-8">
+        Connect with resources, report incidents, donate supplies, or volunteer to help those in need.
+    </p>
+    <div class="space-x-4">
+        <a href="/Volunteer/Register"
+           class="px-6 py-2 rounded-lg border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition">
+            Get Started
+        </a>
+        <a href="/Donation/Add"
+           class="px-6 py-2 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 transition">
+            Donate
+        </a>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+    <div class="bg-white p-6 rounded shadow text-center hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">Volunteer Management</h3>
+        <p>Register, login, and manage your volunteer profile.</p>
+    </div>
+    <div class="bg-white p-6 rounded shadow text-center hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">Resource Donations</h3>
+        <p>Donate supplies to help affected communities.</p>
+    </div>
+    <div class="bg-white p-6 rounded shadow text-center hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">Incident Reporting</h3>
+        <p>Sign up for tasks to assist in disaster relief.</p>
+    </div>
+</div>
+

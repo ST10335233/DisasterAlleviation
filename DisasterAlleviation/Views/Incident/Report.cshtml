@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Report Incident";
+}
+
+<h2>Report Incident</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="bg-green-100 text-green-700 p-2 mb-4">@ViewBag.Message</div>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="bg-red-100 text-red-700 p-2 mb-4">@ViewBag.Error</div>
+}
+
+<form asp-action="Report" method="post">
+    <div>
+        <label>Title</label>
+        <input type="text" name="title" class="border p-2 rounded w-full" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea name="description" class="border p-2 rounded w-full"></textarea>
+    </div>
+    <div>
+        <label>Location</label>
+        <input type="text" name="location" class="border p-2 rounded w-full" />
+    </div>
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded mt-2">Report</button>
+</form>
