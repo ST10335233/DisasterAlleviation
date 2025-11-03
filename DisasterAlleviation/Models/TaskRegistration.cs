@@ -8,7 +8,7 @@ namespace DisasterAlleviationFoundation.Models
         public int Id { get; set; }
         public string VolunteerName { get; set; }
         public string IncidentTitle { get; set; }
-   
+
     }
 
 }

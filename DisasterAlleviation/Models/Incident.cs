@@ -4,6 +4,8 @@ namespace DisasterAlleviationFoundation.Models
 {
     public class Incident
     {
+        public string Severity;
+
         public int Id { get; set; }                  // Unique ID
         public string Title { get; set; } = "";      // Short Title of Incident
         public string Description { get; set; } = "";// Details of Incident
@@ -12,3 +14,4 @@ namespace DisasterAlleviationFoundation.Models
     }
 
 }
+

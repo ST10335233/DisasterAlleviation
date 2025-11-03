@@ -12,6 +12,6 @@ namespace DisasterAlleviationFoundation.Data
         public DbSet<Donation> Donations { get; set; }
         public DbSet<TaskRegistration> TaskRegistrations { get; set; }
         public DbSet<Incident> Incidents { get; set; }
-
+        
     }
 }
